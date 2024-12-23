@@ -26,4 +26,10 @@ public class TestotomasyonuPage {
     @FindBy(xpath = "(//*[text()='Logout'])[2]")
     public WebElement logoutButonu;
 
+    @FindBy(id = "global-search")
+    public WebElement aramaKutusu;
+
+    @FindBy(xpath = "//*[@*='product-count-text']")
+    public WebElement aramaSonucu;
+
 }

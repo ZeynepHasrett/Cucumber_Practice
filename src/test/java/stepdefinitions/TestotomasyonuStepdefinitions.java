@@ -61,4 +61,16 @@ public class TestotomasyonuStepdefinitions {
         Driver.quitDriver();
     }
 
+    @When("arama kutusuna {string} yazip aratir")
+    public void aramaKutusunaYazipAratir(String aranacakKelime) {
+        testotomasyonuPage.aramaKutusu.sendKeys(aranacakKelime + Keys.ENTER);
+    }
+
+    @Then("arama sonucunda urun bulunabildigini test eder")
+    public void aramaSonucundaUrunBulunabildiginiTestEder() {
+        String unexpectedSonuc = ConfigReader.getProperty("toUnexpectedSonuc");
+        String actualSonuc = testotomasyonuPage.aramaSonucu.getText();
+
+        Assertions.assertNotEquals(unexpectedSonuc, actualSonuc);
+    }
 }
